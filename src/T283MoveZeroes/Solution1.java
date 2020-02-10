@@ -1,9 +1,9 @@
-package moveZeroes283;
+package T283MoveZeroes;
 
 import java.util.ArrayList;
 
 // 283. Move Zeroes
-// https://leetcode.com/problems/move-zeroes/description/
+// https://leetcode-cn.com/problems/move-zeroes/description/
 // 时间复杂度: O(n)
 // 空间复杂度: O(n)
 public class Solution1 {
