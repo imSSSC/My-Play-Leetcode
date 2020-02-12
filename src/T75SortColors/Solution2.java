@@ -4,7 +4,7 @@ package T75SortColors;
 // https://leetcode-cn.com/problems/sort-colors/description/
 //
 // 三路快速排序的思想
-// 对整个数组遍历了两遍
+// 对整个数组只遍历了一遍
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
 public class Solution2 {
