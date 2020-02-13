@@ -47,7 +47,6 @@ public class Solution1 {
     }
 
     public static void main(String[] args) {
-        System.out.println('牛'|'2');
         int[] nums = {2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 2, 2, 0, 2, 2, 2, 1, 1, 0};
         (new Solution1()).sortColors(nums);
         printArr(nums);
