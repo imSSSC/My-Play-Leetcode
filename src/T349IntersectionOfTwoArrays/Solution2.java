@@ -1,5 +1,6 @@
 package T349IntersectionOfTwoArrays;
 
+import java.util.HashSet;
 import java.util.TreeSet;
 
 // 349. Intersection of Two Arrays
@@ -9,7 +10,7 @@ import java.util.TreeSet;
 // 空间复杂度: O(n)
 public class Solution2 {
     public int[] intersection(int[] nums1, int[] nums2) {
-        TreeSet<Integer> set1 = new TreeSet<>();
+        HashSet<Integer> set1 = new HashSet<>();
         for (int i : nums1) {
             set1.add(i);
         }
