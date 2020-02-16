@@ -3,7 +3,7 @@ package T220ContainsDuplicateIII;
 import java.util.TreeSet;
 
 // 220. Contains Duplicate III
-// https://leetcode.com/problems/contains-duplicate-iii/description/
+// https://leetcode-cn.com/problems/contains-duplicate-iii/description/
 //
 // 时间复杂度: O(nlogk)
 // 空间复杂度: O(k)
