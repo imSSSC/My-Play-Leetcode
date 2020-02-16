@@ -1,8 +1,5 @@
 package T242ValidAnagram;
 
-import java.util.HashMap;
-import java.util.HashSet;
-
 // 242. 有效的字母异位词
 // https://leetcode-cn.com/problems/valid-anagram/
 //
