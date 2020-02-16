@@ -5,8 +5,8 @@ import java.util.HashMap;
 // 205. 同构字符串
 // https://leetcode-cn.com/problems/isomorphic-strings/
 //
-// 时间复杂度: O(n)
-// 空间复杂度: O(1)
+// 时间复杂度: O(?)
+// 空间复杂度: O(?)
 // 查找表
 public class Solution1 {
     public boolean isIsomorphic(String s, String t) {
