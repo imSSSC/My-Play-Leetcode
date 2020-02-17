@@ -9,7 +9,7 @@ import java.util.stream.Stream;
 //
 // 时间复杂度: O(n^2)
 // 空间复杂度: O(n)
-// 查找表
+// 查找表 + 排序 + 双指针
 public class Solution1 {
 
     public List<List<Integer>> threeSum(int[] nums) {
