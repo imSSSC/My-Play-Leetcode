@@ -36,6 +36,7 @@ public class Solution2 {
         }
     }
 
+    // 带详解释的
     public List<Integer> preorderTraversal(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<>();
         if (root == null)
@@ -62,4 +63,27 @@ public class Solution2 {
         return res;
     }
 
+    // 常规的
+//    public List<Integer> preorderTraversal(TreeNode root) {
+//        ArrayList<Integer> res = new ArrayList<>();
+//        if (root == null)
+//            return res;
+//
+//        Stack<TreeNode> stack = new Stack<>();
+//        stack.push(root);
+//        while (!stack.empty()) {
+//            TreeNode command = stack.pop();
+//            res.add(command.val);
+//
+//            if (command.right != null) {
+//                stack.push(command.right);
+//            }
+//            if (command.left != null) {
+//                stack.push(command.left);
+//            }
+//        }
+//        return res;
+//    }
+
+    // todo morris
 }
