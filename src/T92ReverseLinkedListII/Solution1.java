@@ -11,40 +11,43 @@ package T92ReverseLinkedListII;
 // 空间复杂度: O(1)
 public class Solution1 {
 
-//    public ListNode reverseBetween(ListNode head, int m, int n) {
-//
-//        ListNode node = head;
-//
-//        for (int i = 1; i < m; i++) {
-//            node = node.next;
-//        }
-//
-//        ListNode pre = null;
-//        ListNode next = null;
-//        ListNode cur = node.next;
-//        for (int i = m; i <= n; i++) {
-//            // 将下个节点指针,移动一位(获取下个节点指针)
-//            next = cur.next;
-//            // 指针方向改变
-//            cur.next = pre;
-//            // 将前节点指针,指向当前节点 移动一位
-//            pre = cur;
-//            // 将当前节点指针,指向下个节点 移动一位
-//            cur = next;
-//        }
-//
-//        //将反转的起点的next指向next。
-//        node.next.next = next;
-//        //需要反转的那一段的上一个节点的next节点指向反转后链表的头结点
-//        node.next = pre;
-//
-//        return head;
-//    }
-//
-//    public static void main(String[] args) {
-//        int[] arr = {1, 2, 3, 4, 5};
-//        System.out.println(new Solution1().reverseBetween(new ListNode(arr), 2, 4));
-//    }
+    public ListNode reverseBetween(ListNode head, int m, int n) {
+
+        ListNode dummyHead = new ListNode(0);
+        dummyHead.next = head;
+
+        // per指针,前指针
+        ListNode perPer = dummyHead;
+        for (int i = 1; i < m; i++) {
+            perPer = perPer.next;
+        }
+
+        // 设置3个指针
+        // pre指针,前一个节点
+        // cur指针,当前节点
+        // next指针的是下个节点
+        ListNode pre = null;
+        ListNode cur = perPer.next;
+        ListNode next = null;
+        for (int i = m; i < n + 1; i++) {
+            next = cur.next;
+            cur.next = pre;
+            pre = cur;
+            cur = next;
+        }
+
+        // 将反转的起点的next指向next。
+        perPer.next.next = next;
+        // 需要反转的那一段的上一个节点的next节点指向反转后链表的头结点
+        perPer.next = pre;
+
+        return dummyHead.next;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(new Solution1().reverseBetween(new ListNode(arr), 1, 4));
+    }
 
 
 }
