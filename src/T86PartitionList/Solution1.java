@@ -10,6 +10,7 @@ package T86PartitionList;
 // https://leetcode-cn.com/problems/partition-list/
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
+// 双指针,分割链表,再相连
 public class Solution1 {
 
     public ListNode partition(ListNode head, int x) {

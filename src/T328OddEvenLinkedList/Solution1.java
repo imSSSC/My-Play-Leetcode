@@ -10,6 +10,7 @@ package T328OddEvenLinkedList;
 // https://leetcode-cn.com/problems/odd-even-linked-list/
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
+// 双指针,分割链表,再相连
 public class Solution1 {
 
     public ListNode oddEvenList(ListNode head) {
