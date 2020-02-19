@@ -60,7 +60,7 @@ public class Solution1 {
         return pre;
     }
 
-    // merge: 1->5->2->4->3  左链表 > 右链表 (结束点 奇数链表 左链表=右链表+1  偶数链表 左链表=右链表+2)
+    // merge: 1->5->2->4->3  左链表 > 右链表 (原始链表为:  奇数 左链表=右链表+1 ; 偶数 左链表=右链表+2)
     private void merge(ListNode left, ListNode right) {
 
         while (right != null) { // 当右链表为空的时候,就结束循环
