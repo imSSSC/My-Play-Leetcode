@@ -9,6 +9,7 @@ package T147InsertionSortList;
 // https://leetcode-cn.com/problems/insertion-sort-list/
 // 时间复杂度: O(n^2)
 // 空间复杂度: O(1)
+// 链表插入排序
 public class Solution1 {
 
     public ListNode insertionSortList(ListNode head) {
@@ -19,24 +20,24 @@ public class Solution1 {
         ListNode pre = dummyHead;
         while (cur != null) {
 
-                if (tail.val < cur.val) { // tail小于当前cur. cur作为新的tail.
-                    tail.next = cur;
-                    tail = cur;
-                    cur = cur.next;
-                } else {
-                    ListNode next = cur.next;
-                    tail.next = next; // 处理了,tail.next更新为cur的下个元素(如果不写这一步,死循环. tail -> cur)
+            if (tail.val < cur.val) { // tail小于当前cur. cur作为新的tail.
+                tail.next = cur;
+                tail = cur;
+                cur = cur.next;
+            } else {
+                ListNode next = cur.next;
+                tail.next = next; // 处理了,tail.next更新为cur的下个元素(如果不写这一步,死循环. tail -> cur)
 
-                    // 插入位置
-                    while (pre.next != null && pre.next.val < cur.val) {
-                        pre = pre.next;
-                    }
-                    cur.next = pre.next; // cur的next 为 pre.next 相当于 cur -> preNext
-                    pre.next = cur;// pre的next 为 cur;  相当于 pre -> cur -> preNext
-                    pre = dummyHead;
-
-                    cur = next;
+                // 插入位置
+                while (pre.next != null && pre.next.val < cur.val) {
+                    pre = pre.next;
                 }
+                cur.next = pre.next; // cur的next 为 pre.next 相当于 cur -> preNext
+                pre.next = cur;// pre的next 为 cur;  相当于 pre -> cur -> preNext
+                pre = dummyHead;
+
+                cur = next;
+            }
 
         }
         return dummyHead.next;
