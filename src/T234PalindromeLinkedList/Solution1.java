@@ -11,6 +11,7 @@ package T234PalindromeLinkedList;
 //
 // 时间复杂度: O(n)
 // 空间复杂度: O(1)
+// 快慢指针中心点 + 翻转链表
 public class Solution1 {
     public boolean isPalindrome(ListNode head) {
         if (head == null) {
