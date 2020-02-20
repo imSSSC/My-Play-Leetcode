@@ -28,7 +28,7 @@ public class Solution2 {
     private int getNext(int temp) {
 
         int result = 0;
-        while (temp > 0) { // 直到每位数都是被运算完成
+        while (temp > 0) { // 直到每位数都是被运算完成(运算完成则temp为个位数)
 
             result += Math.pow(temp % 10, 2); // 求个位数的平方, 比如 19%10=9, 111%10 =1
             temp = temp / 10; // 去除各位数
