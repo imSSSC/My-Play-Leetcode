@@ -1,19 +1,18 @@
-package T102BinaryTreeLevelOrderTraversal;
+package T107BinaryTreeLevelOrderTraversalII;
 
 import javafx.util.Pair;
 
-import javax.management.Query;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-// 102. 二叉树的层次遍历
-// https://leetcode-cn.com/problems/binary-tree-level-order-traversal/
+// 107. 二叉树的层次遍历 II
+// https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
 // 二叉树的层序遍历(宽/广度优先搜索（BFS）)
 // 时间复杂度: O(n), n为树的节点个数
 // 空间复杂度: O(n)
-// 队列
+// 双队列: 每次都放在队列首
 public class Solution1 {
 
     // Definition for a binary tree node.
@@ -28,9 +27,9 @@ public class Solution1 {
     }
 
     // bfs
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrderBottom(TreeNode root) {
 
-        List<List<Integer>> res = new ArrayList<>();
+        LinkedList<List<Integer>> res = new LinkedList<>();
         if (root == null) {
             return res;
         }
@@ -39,19 +38,18 @@ public class Solution1 {
         queue.offer(new Pair<>(root, 0));
 
         while (!queue.isEmpty()) {
+            Pair<TreeNode, Integer> pair = queue.poll();
+            TreeNode node = pair.getKey();
+            Integer level = pair.getValue();
 
-            Pair<TreeNode, Integer> front = queue.poll();
-            TreeNode node = front.getKey();
-            Integer level = front.getValue();
-
-            if (res.size() == level) { // 新增的层数第一次和外层List的size是一致的.
-                res.add(new ArrayList<>());
+            if (level == res.size()) {
+                res.addFirst(new ArrayList<>());
             }
-
-            res.get(level).add(node.val);
+            res.get(0).add(node.val);
             if (node.left != null) queue.offer(new Pair<>(node.left, level + 1));
             if (node.right != null) queue.offer(new Pair<>(node.right, level + 1));
         }
+
         return res;
     }
 }
