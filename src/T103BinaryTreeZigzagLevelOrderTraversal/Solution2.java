@@ -22,19 +22,22 @@ public class Solution2 {
     }
 
     List<List<Integer>> res = new ArrayList<>();
-// todo
-//    public List<List<Integer>> levelOrder(TreeNode root) {
-//        if (root == null) {
-//            return res;
-//        }
-//        bfs(root, 0);
-//        return res;
-//    }
-//
-//    private void bfs(TreeNode root, Integer level) {
-//        if (res.size() == level) res.add(new ArrayList<>());
-//        res.get(level).add(root.val);
-//        if (root.left != null) bfs(root.left, level + 1);
-//        if (root.right != null) bfs(root.right, level + 1);
-//    }
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        if (root == null) {
+            return res;
+        }
+        bfs(root, 0);
+        return res;
+    }
+
+    private void bfs(TreeNode node, Integer level) {
+        if (res.size() == level) res.add(new ArrayList<>());
+
+        if (level % 2 == 0) res.get(level).add(node.val);
+        else res.get(level).add(0, node.val);
+
+        if (node.left != null) bfs(node.left, level + 1);
+        if (node.right != null) bfs(node.right, level + 1);
+    }
 }

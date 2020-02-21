@@ -2,6 +2,7 @@ package T103BinaryTreeZigzagLevelOrderTraversal;
 
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -24,34 +25,33 @@ public class Solution3 {
         }
 
     }
-    // todo
-//    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-//        List<List<Integer>> res = new ArrayList<>();
-//        if (root == null) return res;
-//
-//        boolean left = true;
-//        LinkedList<TreeNode> queue = new LinkedList<>();
-//        queue.offer(root);
-//        while (!queue.isEmpty()) {
-//
-//            List<Integer> vales = new ArrayList<>();
-//            int size = queue.size();
-//            for (int i = 0; i < size; i++) {
-//                TreeNode node;
-//                if (left) {
-//                    node = queue.pop();
-//                } else {
-//                    node = queue.pollLast();
-//                }
-//                assert node != null;
-//                vales.add(node.val);
-//                if (node.left != null) queue.offer(node.left);
-//                if (node.right != null) queue.offer(node.right);
-//            }
-//            res.add(vales);
-//            left = false;
-//        }
-//        return res;
-//    }
+
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+        if (root == null) return res;
+
+        boolean goLeft = false;
+        LinkedList<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while (!queue.isEmpty()) {
+
+            List<Integer> vales = new ArrayList<>();
+            int size = queue.size();
+            for (int i = 0; i < size; i++) {
+                TreeNode node;
+                node = queue.pop();
+                vales.add(node.val);
+                if (node.left != null) queue.offer(node.left);
+                if (node.right != null) queue.offer(node.right);
+            }
+
+            if (goLeft) {
+                Collections.reverse(vales); // 存入时候取反
+            }
+            res.add(vales);
+            goLeft = !goLeft ;
+        }
+        return res;
+    }
 
 }
