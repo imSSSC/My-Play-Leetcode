@@ -13,7 +13,7 @@ import java.util.Queue;
 // 二叉树的层序遍历(宽/广度优先搜索（BFS）)
 // 时间复杂度: O(n), n为树的节点个数
 // 空间复杂度: O(n)
-// 队列
+// 队列 需要pair,需要记录level
 public class Solution1 {
 
     // Definition for a binary tree node.
